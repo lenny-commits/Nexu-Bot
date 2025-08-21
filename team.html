@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bewerbungsseite</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0a0d12, #12151b);
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    /* Topbar */
+    .topbar {
+      width: 100%;
+      height: 60px;
+      background: #1c1f26;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      padding: 0 20px;
+    }
+
+    .topbar h1 {
+      color: #00cfff;
+      font-size: 1.8rem;
+      margin: 0;
+      text-shadow: 0 0 10px #00cfff;
+    }
+
+    /* Home Button zentriert */
+    .home-btn {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #00cfff;
+      font-size: 1.5rem;
+      text-decoration: none;
+      padding: 8px;
+      border-radius: 8px;
+      transition: 0.3s;
+      box-shadow: 0 0 5px #00cfff;
+    }
+
+    .home-btn:hover {
+      transform: translateX(-50%) scale(1.1);
+      box-shadow: 0 0 15px #00cfff;
+    }
+
+    /* Application Section */
+    .application-section {
+      padding: 120px 20px 50px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .application-section h2 {
+      font-size: 2.8rem;
+      color: #00cfff;
+      margin-bottom: 60px;
+      text-shadow: 0 0 15px #00cfff;
+    }
+
+    .application-cards {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .application-card {
+      background: rgba(255,255,255,0.05);
+      padding: 35px;
+      border-radius: 25px;
+      width: 260px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+      text-align: center;
+      border: 2px solid transparent;
+    }
+
+    .application-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 25px #00cfff, 0 0 50px #007bff;
+      border: 2px solid #00cfff;
+    }
+
+    .application-card h3 {
+      color: #00cfff;
+      margin-bottom: 15px;
+      font-size: 1.6rem;
+      text-shadow: 0 0 10px #00cfff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .application-card p {
+      color: #aaa;
+      margin-bottom: 25px;
+    }
+
+    .apply-btn {
+      padding: 12px 25px;
+      background: linear-gradient(90deg,#007bff,#00cfff);
+      border-radius: 50px;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      display: inline-block;
+      transition: 0.3s;
+      box-shadow: 0 0 10px #00cfff;
+    }
+
+    .apply-btn:hover {
+      transform: scale(1.1) rotate(1deg);
+      box-shadow: 0 0 30px #00cfff, 0 0 60px #007bff;
+    }
+
+    /* Popup Formular */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 100;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      overflow: auto;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(5px);
+    }
+
+    .modal-content {
+      background: #1c1f26;
+      margin: 7% auto;
+      padding: 30px;
+      width: 90%;
+      max-width: 500px;
+      border-radius: 20px;
+      color: #fff;
+      border: 2px solid #00cfff;
+      box-shadow: 0 0 20px #00cfff;
+      position: relative;
+      animation: popIn 0.4s ease-out;
+    }
+
+    @keyframes popIn {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .close {
+      color: #aaa;
+      position: absolute;
+      top: 15px; right: 20px;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: #fff;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0 20px 0;
+      border-radius: 10px;
+      border: none;
+      background: #2c2f38;
+      color: #fff;
+      transition: 0.3s;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: 2px solid #00cfff;
+      box-shadow: 0 0 15px #00cfff;
+    }
+
+    button {
+      padding: 12px 25px;
+      background: linear-gradient(90deg,#007bff,#00cfff);
+      border: none;
+      border-radius: 50px;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 0 10px #00cfff;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px #00cfff, 0 0 60px #007bff;
+    }
+
+    @media (max-width: 600px) {
+      .topbar h1 {
+        font-size: 1.2rem;
+      }
+
+      .home-btn {
+        font-size: 1.2rem;
+        padding: 6px 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <a href="index.html" class="home-btn"><i class="fas fa-home"></i></a>
+  </div>
+
+  <!-- Application Section -->
+  <section class="application-section">
+    <h2>Bewirb dich jetzt!</h2>
+    <div class="application-cards">
+      <div class="application-card">
+        <h3><i class="fas fa-headset"></i> Kundenservice</h3>
+        <p>Unterstütze unsere Community und hilf Nutzern bei Fragen.</p>
+        <a class="apply-btn" onclick="openForm('Kundenservice')">Hier Bewerben</a>
+      </div>
+
+      <div class="application-card">
+        <h3><i class="fas fa-robot"></i> Bot Tester</h3>
+        <p>Teste unsere Bots und melde Bugs oder Verbesserungsvorschläge.</p>
+        <a class="apply-btn" onclick="openForm('Bot Tester')">Hier Bewerben</a>
+      </div>
+
+      <div class="application-card">
+        <h3><i class="fas fa-code"></i> Developer</h3>
+        <p>Arbeite aktiv an Projekten mit und entwickle neue Features.</p>
+        <a class="apply-btn" onclick="openForm('Developer')">Hier Bewerben</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popup Formular -->
+  <div id="applicationModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Bewerbungsformular</h2>
+      <form action="https://formspree.io/f/mvgqjewo" method="POST">
+        <input type="hidden" name="Bewerbungsbereich" id="bewerbungsbereich">
+        <label>Discord Nickname</label>
+        <input type="text" name="DiscordNickname" required>
+        <label>Discord ID</label>
+        <input type="text" name="DiscordID" required>
+        <label>Alter</label>
+        <input type="number" name="Alter" required>
+        <label>Erfahrung / Motivation</label>
+        <textarea name="Erfahrung" rows="4" required></textarea>
+        <button type="submit">Absenden</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Modal Handling
+    const modal = document.getElementById('applicationModal');
+    const closeBtn = modal.querySelector('.close');
+
+    function openForm(bereich) {
+      modal.style.display = 'block';
+      document.getElementById('bewerbungsbereich').value = bereich;
+    }
+
+    function closeForm() {
+      modal.style.display = 'none';
+    }
+
+    closeBtn.addEventListener('click', closeForm);
+    window.addEventListener('click', e => {
+      if (e.target === modal) closeForm();
+    });
+  </script>
+
+</body>
+</html>
+
+
