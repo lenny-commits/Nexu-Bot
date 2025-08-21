@@ -545,15 +545,14 @@ footer { text-align:center; padding:40px; background:#0b0c10; color:#555; }
 -----
 .topbar {
     display: flex;
-    align-items: center;  /* Zentriert Bild und Button vertikal */
-    justify-content: space-between; /* Logo links, Button rechts */
-    padding: 10px 20px;
+    align-items: center;       /* Zentriert Logo und Button vertikal */
+    justify-content: space-between; 
+    height: 60px;              /* Höhe deiner Top-Leiste */
+    padding: 0 20px;
     background-color: #1e1e1e; /* optional */
 }
 
 .topbar .logo-img {
-    height: 40px; /* Höhe anpassen */
-    width: auto;  /* Verhältnis beibehalten */
+    height: 100%; /* passt sich automatisch der Höhe der Topbar an */
+    width: auto;  /* Verhältnis bleibt korrekt */
 }
-
-
