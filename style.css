@@ -542,3 +542,18 @@ footer { text-align:center; padding:40px; background:#0b0c10; color:#555; }
 .team .member .socials a:hover {
   color: #00cfff;
 }
+-----
+.topbar {
+    display: flex;
+    align-items: center;  /* Zentriert Bild und Button vertikal */
+    justify-content: space-between; /* Logo links, Button rechts */
+    padding: 10px 20px;
+    background-color: #1e1e1e; /* optional */
+}
+
+.topbar .logo-img {
+    height: 40px; /* Höhe anpassen */
+    width: auto;  /* Verhältnis beibehalten */
+}
+
+
