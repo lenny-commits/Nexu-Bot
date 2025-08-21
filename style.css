@@ -207,6 +207,201 @@ a { text-decoration: none; color: inherit; }
   font-size: 0.9rem;
 }
 
+/* ==========================
+   Changelogs
+   ========================== */
+.changelogs {
+  padding: 120px 70px;
+  background: #0e1116;
+  text-align: center;
+}
+
+.changelogs h1 {
+  font-size: 2.8rem;
+  color: #00cfff;
+  margin-bottom: 20px;
+}
+
+.changelogs p {
+  color: #aaa;
+  margin-bottom: 60px;
+  font-size: 1.1rem;
+}
+
+.changelog-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  justify-items: center;
+}
+
+.changelog-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 35px;
+  border-radius: 25px;
+  width: 100%;
+  max-width: 600px;
+  text-align: left;
+  color: #ccc;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.changelog-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 0 25px #00cfff, 0 0 50px #007bff;
+}
+
+.changelog-card h2 {
+  font-size: 1.6rem;
+  color: #00cfff;
+  margin-bottom: 15px;
+}
+
+.changelog-card h3 {
+  font-size: 1.2rem;
+  color: #007bff;
+  margin: 20px 0 10px 0;
+}
+
+.changelog-card ul {
+  margin-left: 20px;
+  list-style: none;
+}
+
+.changelog-card li {
+  margin: 6px 0;
+  color: #aaa;
+  position: relative;
+  padding-left: 25px;
+}
+
+.changelog-card li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #00cfff;
+  font-weight: bold;
+}
+
+
+/* Body */
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+  background: #0b0c10; /* dunkler Sci-Fi-Hintergrund */
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #0a0a0a;
+    position: fixed;
+    width: 100%;
+    z-index: 1001;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    color: #00f0ff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Top-Leiste */
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: #1c1f27;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    color: #00f0ff;
+    font-size: 24px;
+    z-index: 1100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+#toggle-btn {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Sidebar */
+#sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px; 
+    width: 300px;
+    height: 100%;
+    background: #1c1f27;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
+    transition: right 0.4s ease;
+    padding: 60px 20px 20px 20px; /* oben Platz für Topbar */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+#sidebar.active {
+    right: 0;
+}
+
+.sidebar-links {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-links li {
+    margin: 15px 0;
+}
+
+.sidebar-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.sidebar-links li a:hover {
+    color: #00f0ff;
+}
+
+/* Buttons unten */
+#sidebar .sidebar-button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px 0;
+    background: #00f0ff;
+    color: #0b0c10;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 8px;
+    text-decoration: none;
+    box-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff;
+    transition: all 0.3s ease;
+}
+
+#sidebar .sidebar-button:hover {
+    color: #fff;
+    background: #3a626b;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #00f0ff, 0 0 40px #00f0ff;
+}
+
+
+
 
 
 
@@ -287,3 +482,63 @@ footer { text-align:center; padding:40px; background:#0b0c10; color:#555; }
   100% { transform: translateY(0); opacity: 1; }
 }
 
+/* ==========================
+   Team Section
+   ========================== */
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 100px 70px;
+  background: #0b0c10;
+}
+
+.team .member {
+  background: #1f1f1f;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 250px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.team .member:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.team .member img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.team .member h3 {
+  margin: 15px 0 5px 0;
+  font-size: 1.5rem;
+  color: #00cfff;
+}
+
+.team .member p {
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 15px;
+}
+
+.team .member .socials {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.team .member .socials a {
+  color: #fff;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.team .member .socials a:hover {
+  color: #00cfff;
+}
