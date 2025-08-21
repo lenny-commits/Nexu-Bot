@@ -164,30 +164,194 @@
     <section id="login" class="login">
         <h2>Verbinde deinen Discord Server</h2>
         <p>Klicke auf den Button und füge NexuBot zu deinem Discord-Server hinzu.</p>
-        <a href="https://discord.com/oauth2/authorize?client_id=1400182020490920087&permissions=8&scope=bot%20applications.commands" target="_blank" class="btn">
-            Bot zu Discord hinzufügen
-        </a>
-    </section>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexuBot - All-in-One Discord Bot</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Topbar Styling */
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 60px; /* Höhe der Top-Leiste */
+            padding: 0 20px;
+            background-color: #1e1e1e; /* optional */
+        }
 
+        .topbar .logo-img {
+            height: 100%; /* passt sich der Topbar-Höhe an */
+            width: auto;  /* Verhältnis beibehalten */
+        }
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 NexuBot. Alle Rechte vorbehalten.</p>
-    </footer>
+        #toggle-btn {
+            font-size: 28px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Top-Leiste -->
+<div class="topbar">
+   <img src="images/team/Bot1.png" alt="NexuBot Logo" class="logo-img">
+   <div id="toggle-btn">&#9776;</div>
+</div>
+
+<!-- Sidebar -->
+<div id="sidebar">
+    <ul class="sidebar-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#info">Über NexuBot</a></li>
+        <li><a href="#plans">Premium Abos</a></li>
+        <li><a href="#social">Social Media</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="changelogs.html">Changelogs</a></li>
+    </ul>
+
+    <a href="#login" class="sidebar-button">Bot zu Discord hinzufügen</a>
+    <a href="team.html" class="sidebar-button">Komm jetzt ins Team!</a>
+</div>
+
+<!-- Hero Section -->
+<section id="home" class="hero">
+    <div class="hero-content">
+        <h1>Willkommen bei NexuBot</h1>
+        <p>Der All-in-One Discord Bot der Zukunft – leistungsstark, modern und interaktiv.</p>
+        <a href="#login" class="btn">Jetzt verbinden</a>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section id="features" class="features">
+    <h2>Features</h2>
+    <div class="feature-cards">
+        <div class="card"><h3>Automatisierung</h3><p>Alles läuft automatisch: Rollen, Moderation und mehr.</p></div>
+        <div class="card"><h3>Interaktive Commands</h3><p>Slash Commands, Buttons und Reaktionen für maximale Kontrolle.</p></div>
+        <div class="card"><h3>Level & Stats</h3><p>Übersichtliche Analysen, Leaderboards und Statistiken direkt in Discord.</p></div>
+        <div class="card"><h3>Custom Tools</h3><p>Individuelle Commands und Tools für deine Community.</p></div>
+        <div class="card"><h3>Proffesionelles Team</h3><p>Wir sind ein ausgebildetes und strukturiertes Team.</p></div>
+    </div>
+</section>
+
+<!-- Info Section -->
+<section id="info" class="info">
+    <div class="info-text">
+        <h2>Über NexuBot</h2>
+        <p>NexuBot ist ein leistungsstarker All-in-One Discord Bot. Er bietet Features wie Moderation, Levelsysteme, automatisierte Rollen, Musik, Spiele und vieles mehr. Entwickelt für Communities jeder Größe – modern, sicher und futuristisch.</p>
+    </div>
+    <div class="info-image"></div>
+</section>
+
+<!-- Abos Section -->
+<section id="plans" class="plans">
+    <h2>Premium Abos</h2>
+    <p class="plans-subtitle">Unterstütze uns mit einem Abo und erhalte exklusive Vorteile.</p>
+    <div class="plan-cards">
+        <div class="plan-card">
+            <span class="plan-badge">VIP Sponsor</span>
+            <div class="plan-price">
+                <span class="price">1,99 €</span>
+                <span class="period">/Monat</span>
+            </div>
+            <ul class="plan-features">
+                <li>Exklusive VIP-Rolle</li>
+                <li>Zugang zu speziellen Events</li>
+            </ul>
+            <a href="https://discord.gg/MCz9rTvyRN" target="_blank" class="btn plan-btn">Abo wählen</a>
+        </div>
+        <div class="plan-card">
+            <span class="plan-badge">NexuBot Premium</span>
+            <div class="plan-price">
+                <span class="price">3,99 €</span>
+                <span class="period">/Monat</span>
+            </div>
+            <ul class="plan-features">
+                <li>Alle Premium-Features</li>
+                <li>Priorisierter Support</li>
+                <li>Exklusive Commands & Tools</li>
+            </ul>
+            <a href="https://discord.gg/MCz9rTvyRN" target="_blank" class="btn plan-btn">Abo wählen</a>
+        </div>
+    </div>
+</section>
+
+<!-- Social Media Section -->
+<section id="social" class="social">
+    <h2>Folge uns auf Social Media</h2>
+    <div class="social-buttons">
+        <a href="https://www.tiktok.com/" target="_blank" class="social-btn tiktok">TikTok</a>
+        <a href="https://www.youtube.com/" target="_blank" class="social-btn youtube">YouTube</a>
+        <a href="https://github.com/" target="_blank" class="social-btn github">GitHub</a>
+        <a href="https://twitter.com/" target="_blank" class="social-btn twitter">Twitter</a>
+    </div>
+</section>
+
+<!-- Team Section -->
+<div class="team">
+  <h2>Unser Team</h2>
+  <div class="team-cards">
+    <div class="team-card">
+      <div class="team-image" style="background-image: url('images/team/owner.png');"></div>
+      <h3>Herr.Lenny M</h3>
+      <p>Bot-Owner</p>
+    </div>
+    <div class="team-card">
+      <div class="team-image" style="background-image: url('images/team/coowner.png');"></div>
+      <h3>Herr. Hello:)</h3>
+      <p>Co-Owner</p>
+    </div>
+    <div class="team-card">
+      <div class="team-image" style="background-image: url('images/team/sk.png');"></div>
+      <h3>Herr. Kener</h3>
+      <p>Sekräter</p>
+    </div>
+    <div class="team-card">
+      <div class="team-image" style="background-image: url('images/team/management.png');"></div>
+      <h3>Herr. Schmidt</h3>
+      <p>Management</p>
+    </div>
+    <div class="team-card">
+      <div class="team-image" style="background-image: url('images/team/teamleitung.png');"></div>
+      <h3>Herr. Koelner</h3>
+      <p>Teamleitung</p>
+    </div>
+    <div class="team-card">
+      <div class="team-image" style="background-image: url('images/team/admin.png');"></div>
+      <h3>Herr. Neuer</h3>
+      <p>Head Of Admin</p>
+    </div>
+    <div class="team-card">
+      <div class="team-image" style="background-image: url('images/team/support.png');"></div>
+      <h3>Herr. Mayer mit den kleinen eier</h3>
+      <p>Head of Support</p>
+    </div>
+  </div>
+</div>
+
+<!-- Discord Login Section -->
+<section id="login" class="login">
+    <h2>Verbinde deinen Discord Server</h2>
+    <p>Klicke auf den Button und füge NexuBot zu deinem Discord-Server hinzu.</p>
+    <a href="https://discord.com/oauth2/authorize?client_id=1400182020490920087&permissions=8&scope=bot%20applications.commands" target="_blank" class="btn">
+        Bot zu Discord hinzufügen
+    </a>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 NexuBot. Alle Rechte vorbehalten.</p>
+</footer>
+
 </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
+</html>
 
 
 
