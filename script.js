@@ -23,6 +23,21 @@ toggleBtn.addEventListener('click', () => {
     sidebar.classList.toggle('active'); // öffnet oder schließt die Sidebar
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    // Sidebar und Toggle Button holen
+    const sidebar = document.getElementById('sidebar');
+    const toggleBtn = document.getElementById('toggle-btn');
+
+    // Wenn beide existieren, EventListener hinzufügen
+    if (sidebar && toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('active'); // Sidebar öffnen oder schließen
+        });
+    }
+});
+
+
+
 
 
 
